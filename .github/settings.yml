@@ -5,4 +5,4 @@
 repository:
   description: Install and configure bareos_fd on your system.
   homepage: https://robertdebock.nl/
-  topics: bareosfd, application, cloud, database, development, infrastructure, linux, monitoring, networking, storage, security, system, tools, windows, ansible, molecule, tox, playbook
+  topics: bareos, infrastructure, linux, storage, system, tools, ansible, molecule, tox, playbook
