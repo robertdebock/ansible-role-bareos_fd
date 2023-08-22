@@ -1,0 +1,17 @@
+---
+- name: Converge
+  hosts: all
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - role: ansible-role-bareos_fd
+      bareos_fd_max_job_bandwidth: "10 mb/s"
+      bareos_fd_directors:
+        - name: "bareos-dir"
+          password: "secretpassword"
+          monitor: no
+      bareos_fd_messages:
+        - name: "Standard"
+          director: "client1-dir = all, !skipped, !restored"
+          description: "Send relevant messages to the Director."
