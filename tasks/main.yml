@@ -10,7 +10,7 @@
   ansible.builtin.package:
     name: "{{ bareos_fd_packages }}"
 
-- name: Place myself.conf for fd
+- name: Place myself.conf
   ansible.builtin.template:
     src: myself.conf.j2
     dest: "/etc/bareos/bareos-fd.d/client/myself.conf"
@@ -20,7 +20,7 @@
   notify:
     - Restart bareos-fd
 
-- name: Place bareos-dir.conf for fd
+- name: Place bareos-dir.conf
   ansible.builtin.template:
     src: bareos-dir.conf.j2
     dest: "/etc/bareos/bareos-fd.d/director/bareos-dir.conf"
@@ -30,7 +30,7 @@
   notify:
     - Restart bareos-fd
 
-- name: Place messages for fd
+- name: Place messages
   ansible.builtin.template:
     src: message.conf.j2
     dest: "/etc/bareos/bareos-fd.d/messages/{{ item.name | capitalize }}.conf"
