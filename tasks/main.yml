@@ -42,6 +42,8 @@
     label: "{{ item.name }}"
   notify:
     - Restart bareos-fd
+  when:
+    - bareos_fd_messages is defined
 
 - name: Start bareos-fd
   ansible.builtin.service:
