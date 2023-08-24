@@ -2,7 +2,7 @@
 galaxy_info:
   author: robertdebock
   role_name: bareos_fd
-  description: Install and configure BareOS File Daemon on your system.
+  description: Install and configure [BareOS](https://www.bareos.com/) File Daemon on your system.
   license: Apache-2.0
   company: none
   min_ansible_version: "2.12"
