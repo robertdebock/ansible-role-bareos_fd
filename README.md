@@ -59,8 +59,8 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 # The client has these configuration parameters.
 bareos_fd_hostname: "{{ ansible_fqdn }}"
 # bareos_fd_max_job_bandwidth: "10 mb/s" # <- Please set your own value
-# bareos_tls_enable: yes
-# bareos_tls_verify_peer: no
+bareos_fd_tls_enable: yes
+bareos_fd_tls_verify_peer: no
 
 # bareos_fd_directors:
 #   - name: "bareos-dir"

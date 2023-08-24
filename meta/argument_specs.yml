@@ -22,3 +22,11 @@ argument_specs:
       bareos_fd_messages:
         type: "list"
         description: "The Messages to configure."
+      bareos_fd_tls_enable:
+        type: "bool"
+        default: yes
+        description: "Enable TLS."
+      bareos_fd_tls_verify_peer:
+        type: "bool"
+        default: no
+        description: "Verify the peer."
