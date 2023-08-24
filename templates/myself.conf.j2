@@ -2,4 +2,10 @@
 
 Client {
   Name = {{ bareos_fd_hostname }}
+{% if bareos_fd_tls_enable is defined %}
+   TLS Enable = {{ bareos_fd_tls_enable | ternary('Yes', 'No') }}
+{% endif %}
+{% if bareos_fd_tls_verify_peer is defined %}
+   TLS Verify Peer = {{ bareos_fd_tls_verify_peer | ternary('Yes', 'No') }}
+{% endif %}
 }

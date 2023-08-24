@@ -34,6 +34,30 @@
   when:
     - bareos_fd_directors is defined
 
+- name: assert | Test if item tls_enable in bareos_fd_directors are set correctly
+  ansible.builtin.assert:
+    that:
+      - item.tls_enable is boolean
+    quiet: yes
+  loop: "{{ bareos_fd_directors }}"
+  loop_control:
+    label: "{{ item.name }}"
+  when:
+    - bareos_fd_directors is defined
+    - item.tls_enable is defined
+
+- name: assert | Test if item tls_verify_peer in bareos_fd_directors are set correctly
+  ansible.builtin.assert:
+    that:
+      - item.tls_verify_peer is boolean
+    quiet: yes
+  loop: "{{ bareos_fd_directors }}"
+  loop_control:
+    label: "{{ item.name }}"
+  when:
+    - bareos_fd_directors is defined
+    - item.tls_verify_peer is defined
+
 - name: assert | Test if bareos_fd_messages is set correctly
   ansible.builtin.assert:
     that:
