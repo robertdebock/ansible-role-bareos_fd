@@ -12,3 +12,4 @@
     - name: Test configuration
       ansible.builtin.command:
         cmd: bareos-fd --test-config
+      become_user: bareos
