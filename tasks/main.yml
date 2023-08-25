@@ -30,10 +30,10 @@
   notify:
     - Restart bareos-fd
 
-- name: Place messages
+- name: Place message
   ansible.builtin.template:
     src: message.conf.j2
-    dest: "/etc/bareos/bareos-fd.d/messages/{{ item.name | capitalize }}.conf"
+    dest: "/etc/bareos/bareos-fd.d/messages/{{ item.name }}.conf"
     owner: bareos
     group: bareos
     mode: "0640"
