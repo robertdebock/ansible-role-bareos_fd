@@ -7,14 +7,3 @@ bareos_fd_hostname: "{{ ansible_fqdn }}"
 bareos_fd_tls_enable: yes
 bareos_fd_tls_verify_peer: no
 baeros_fd_heartbeat_interval: 0
-
-# bareos_fd_directors:
-#   - name: "bareos-dir"
-#     password: "secretpassword"
-#     monitor: no
-#     tls_enable: yes
-#     tls_verify_peer: no
-# bareos_fd_messages: # <- Please set your own value
-#   - name: "Standard"
-#     director: "client1-dir = all, !skipped, !restored"
-#     description: "Send relevant messages to the Director."
