@@ -7,10 +7,10 @@ Director {
   Password = "{{ director.password }}"
   Monitor = {{ director.monitor | ternary('Yes','No') }}
 {% if director.tls_enable is defined %}
-   TLS Enable = {{ director.tls_enable | ternary('Yes', 'No') }}
+  TLS Enable = {{ director.tls_enable | ternary('Yes', 'No') }}
 {% endif %}
 {% if director.tls_verify_peer is defined %}
-   TLS Verify Peer = {{ director.tls_verify_peer | ternary('Yes', 'No') }}
+  TLS Verify Peer = {{ director.tls_verify_peer | ternary('Yes', 'No') }}
 {% endif %}
 }
 {% endfor %}
