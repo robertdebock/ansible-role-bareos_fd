@@ -4,4 +4,5 @@ Client {
   Name = {{ bareos_fd_hostname }}
    TLS Enable = {{ bareos_fd_tls_enable | ternary('Yes', 'No') }}
    TLS Verify Peer = {{ bareos_fd_tls_verify_peer | ternary('Yes', 'No') }}
+   Heartbeat Interval = {{ baeros_fd_heartbeat_interval }}
 }

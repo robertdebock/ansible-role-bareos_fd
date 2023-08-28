@@ -30,3 +30,7 @@ argument_specs:
         type: "bool"
         default: no
         description: "Verify the peer."
+      baeros_fd_heartbeat_interval:
+        type: "int"
+        default: 0
+        description: "The inteval in seconds to send a heartbeat."
