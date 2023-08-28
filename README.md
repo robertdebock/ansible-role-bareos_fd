@@ -33,7 +33,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
           tls_verify_peer: no
       bareos_fd_messages:
         - name: "Standard"
-          director: "client1-dir = all, !skipped, !restored"
+          director: "bareos-dir"
           description: "Send relevant messages to the Director."
 ```
 
