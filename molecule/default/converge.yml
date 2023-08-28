@@ -13,6 +13,11 @@
           monitor: no
           tls_enable: yes
           tls_verify_peer: no
+        - name: "bareos-mon"
+          password: "secretpassword"
+          monitor: yes
+          tls_enable: yes
+          tls_verify_peer: no
       bareos_fd_messages:
         - name: "Standard"
           director: "client1-dir = all, !skipped, !restored"
