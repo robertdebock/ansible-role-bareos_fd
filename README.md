@@ -26,14 +26,9 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
           monitor: no
           tls_enable: yes
           tls_verify_peer: no
-        - name: "bareos-mon"
-          password: "secretpassword"
-          monitor: yes
-          tls_enable: yes
-          tls_verify_peer: no
       bareos_fd_messages:
         - name: "Standard"
-          director: "bareos-dir"
+          director: "bareos-dir = all, !skipped, !restored"
           description: "Send relevant messages to the Director."
 ```
 

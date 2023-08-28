@@ -15,6 +15,5 @@
           tls_verify_peer: no
       bareos_fd_messages:
         - name: "Standard"
-          director: "bareos-dir"
-          # director: "bareos-dir = all, !skipped, !restored"
+          director: "bareos-dir = all, !skipped, !restored"
           description: "Send relevant messages to the Director."
