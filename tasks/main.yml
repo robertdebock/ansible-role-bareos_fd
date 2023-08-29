@@ -18,7 +18,7 @@
     group: bareos
     mode: "0640"
   notify:
-    - Restart bareos-fd
+    - Restart bareos-filedaemon
 
 - name: Place bareos-dir.conf
   ansible.builtin.template:
@@ -28,7 +28,7 @@
     group: bareos
     mode: "0640"
   notify:
-    - Restart bareos-fd
+    - Restart bareos-filedaemon
 
 - name: Place message
   ansible.builtin.template:
@@ -41,12 +41,12 @@
   loop_control:
     label: "{{ item.name }}"
   notify:
-    - Restart bareos-fd
+    - Restart bareos-filedaemon
   when:
     - bareos_fd_messages is defined
 
-- name: Start bareos-fd
+- name: Start bareos-filedaemon
   ansible.builtin.service:
-    name: bareos-fd
+    name: bareos-filedaemon
     state: started
     enabled: yes

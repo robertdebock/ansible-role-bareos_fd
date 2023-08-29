@@ -1,7 +1,7 @@
 ---
 # handlers file for bareos_fd
 
-- name: Restart bareos-fd
+- name: Restart bareos-filedaemon
   ansible.builtin.service:
-    name: bareos-fd
+    name: bareos-filedaemon
     state: restarted
