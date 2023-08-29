@@ -13,3 +13,6 @@
       ansible.builtin.command:
         cmd: bareos-fd --test-config
       become_user: bareos
+      register: bareos_fd_test_config
+      failed_when:
+        - bareos_fd_test_config.stdout_lines is search("There are configuration warnings")
