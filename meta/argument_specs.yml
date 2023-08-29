@@ -15,13 +15,8 @@ argument_specs:
         description: "The hostname of the File Daemon."
       bareos_fd_max_job_bandwidth:
         type: "str"
+        default: "10 mb/s"
         description: "The maximum bandwidth to use."
-      bareos_fd_directors:
-        type: "list"
-        description: "The Directors to connect to."
-      bareos_fd_messages:
-        type: "list"
-        description: "The Messages to configure."
       bareos_fd_tls_enable:
         type: "bool"
         default: yes
@@ -34,3 +29,11 @@ argument_specs:
         type: "int"
         default: 0
         description: "The inteval in seconds to send a heartbeat."
+      bareos_fd_directors:
+        type: "list"
+        default: []
+        description: "The Directors to connect to."
+      bareos_fd_messages:
+        type: "list"
+        default: []
+        description: "The Messages to configure."

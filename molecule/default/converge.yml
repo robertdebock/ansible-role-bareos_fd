@@ -6,7 +6,6 @@
 
   roles:
     - role: ansible-role-bareos_fd
-      bareos_fd_max_job_bandwidth: "10 mb/s"
       bareos_fd_directors:
         - name: "bareos-dir"
           password: "secretpassword"

@@ -19,7 +19,6 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 
   roles:
     - role: robertdebock.bareos_fd
-      bareos_fd_max_job_bandwidth: "10 mb/s"
       bareos_fd_directors:
         - name: "bareos-dir"
           password: "secretpassword"
@@ -73,7 +72,7 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 
 # The client has these configuration parameters.
 bareos_fd_hostname: "{{ inventory_hostname }}"
-# bareos_fd_max_job_bandwidth: "10 mb/s" # <- Please set your own value
+bareos_fd_max_job_bandwidth: "10 mb/s"
 bareos_fd_tls_enable: yes
 bareos_fd_tls_verify_peer: no
 baeros_fd_heartbeat_interval: 0
