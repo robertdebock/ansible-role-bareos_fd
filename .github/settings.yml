@@ -3,6 +3,6 @@
 # Ansible managed
 #
 repository:
-  description: Install and configure [BareOS](https://www.bareos.com/) File Daemon on your system.
+  description: Install and configure [BareOS](https://www.bareos.com/) File Daemon.
   homepage: https://robertdebock.nl/
   topics: bareos, infrastructure, linux, storage, system, tools, ansible, molecule, tox, playbook
