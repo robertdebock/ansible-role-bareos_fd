@@ -30,6 +30,12 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
         - name: "Standard"
           director: "bareos-dir = all, !skipped, !restored"
           description: "Send relevant messages to the Director."
+          append:
+            file: "/var/log/bareos/bareos.log"
+            messages:
+              - all
+              - "!skipped"
+              - "!terminate"
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/robertdebock/ansible-role-bareos_fd/blob/master/molecule/default/prepare.yml):

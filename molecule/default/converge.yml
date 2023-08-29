@@ -17,3 +17,9 @@
         - name: "Standard"
           director: "bareos-dir = all, !skipped, !restored"
           description: "Send relevant messages to the Director."
+          append:
+            file: "/var/log/bareos/bareos.log"
+            messages:
+              - all
+              - "!skipped"
+              - "!terminate"

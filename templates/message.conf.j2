@@ -4,4 +4,7 @@ Messages {
   Name = "{{ item.name }}"
   Description = "{{ item.description }}"
   Director = {{ item.director }}
+{% if item.append is defined %}
+  Append = "{{ item.append.file }}" = {{ item.append.messages | join(', ') }}
+{% endif %}
 }
