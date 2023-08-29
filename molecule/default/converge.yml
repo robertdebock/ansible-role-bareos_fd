@@ -15,7 +15,12 @@
           tls_verify_peer: no
       bareos_fd_messages:
         - name: "Standard"
-          director: "bareos-dir = all, !skipped, !restored"
+          director:
+            server: bareos-dir
+            messages:
+              - all
+              - "!skipped"
+              - "!restored"
           description: "Send relevant messages to the Director."
           append:
             file: "/var/log/bareos/bareos.log"
@@ -23,3 +28,7 @@
               - all
               - "!skipped"
               - "!terminate"
+          console:
+            - all
+            - "!skipped"
+            - "!saved"

@@ -3,8 +3,13 @@
 Messages {
   Name = "{{ item.name }}"
   Description = "{{ item.description }}"
-  Director = {{ item.director }}
+{% if item.director is defined %}
+  Director = {{ item.director.server }} = {{ item.director.messages | join(', ') }}
+{% endif %}
 {% if item.append is defined %}
   Append = "{{ item.append.file }}" = {{ item.append.messages | join(', ') }}
+{% endif %}
+{% if item.console is defined %}
+  Console = {{ item.console | join(', ') }}
 {% endif %}
 }

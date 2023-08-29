@@ -15,7 +15,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 - name: Converge
   hosts: all
   become: yes
-  gather_facts: yes
+  gather_facts: no
 
   roles:
     - role: robertdebock.bareos_fd
@@ -28,7 +28,12 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
           tls_verify_peer: no
       bareos_fd_messages:
         - name: "Standard"
-          director: "bareos-dir = all, !skipped, !restored"
+          director:
+            server: bareos-dir
+            messages:
+              - all
+              - "!skipped"
+              - "!restored"
           description: "Send relevant messages to the Director."
           append:
             file: "/var/log/bareos/bareos.log"
@@ -36,6 +41,10 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
               - all
               - "!skipped"
               - "!terminate"
+          console:
+            - all
+            - "!skipped"
+            - "!saved"
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/robertdebock/ansible-role-bareos_fd/blob/master/molecule/default/prepare.yml):
@@ -63,7 +72,7 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 # defaults file for bareos_fd
 
 # The client has these configuration parameters.
-bareos_fd_hostname: "{{ ansible_fqdn }}"
+bareos_fd_hostname: "{{ inventory_hostname }}"
 # bareos_fd_max_job_bandwidth: "10 mb/s" # <- Please set your own value
 bareos_fd_tls_enable: yes
 bareos_fd_tls_verify_peer: no
