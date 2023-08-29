@@ -102,3 +102,15 @@
     label: "{{ item.name }}"
   when:
     - bareos_fd_messages is defined
+
+- name: assert | Test if item.append in bareos_fd_messages are set correctly
+  ansible.builtin.assert:
+    that:
+      - item.append is mapping
+    quiet: yes
+  loop: "{{ bareos_fd_messages }}"
+  loop_control:
+    label: "{{ item.name }}"
+  when:
+    - bareos_fd_messages is defined
+    - item.append is defined
