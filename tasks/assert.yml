@@ -93,6 +93,9 @@
       - item.name is defined
       - item.name is string
       - item.name is not none
+      - item.description is defined
+      - item.description is string
+      - item.description is not none
     quiet: yes
   loop: "{{ bareos_fd_messages }}"
   loop_control:
