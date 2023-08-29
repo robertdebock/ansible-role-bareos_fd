@@ -11,7 +11,7 @@ argument_specs:
     options:
       bareos_fd_hostname:
         type: "str"
-        default: "{{ ansible_fqdn}}"
+        default: "{{ inventory_hostname }}"
         description: "The hostname of the File Daemon."
       bareos_fd_max_job_bandwidth:
         type: "str"

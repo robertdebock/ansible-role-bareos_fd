@@ -2,7 +2,7 @@
 # defaults file for bareos_fd
 
 # The client has these configuration parameters.
-bareos_fd_hostname: "{{ ansible_fqdn }}"
+bareos_fd_hostname: "{{ inventory_hostname }}"
 # bareos_fd_max_job_bandwidth: "10 mb/s" # <- Please set your own value
 bareos_fd_tls_enable: yes
 bareos_fd_tls_verify_peer: no
