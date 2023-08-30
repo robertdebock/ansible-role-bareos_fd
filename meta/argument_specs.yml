@@ -17,6 +17,10 @@ argument_specs:
         type: "str"
         default: "10 mb/s"
         description: "The maximum bandwidth to use."
+      bareos_fd_message:
+        type: "str"
+        default: "Standard"
+        description: "The message to use."
       bareos_fd_tls_enable:
         type: "bool"
         default: yes
