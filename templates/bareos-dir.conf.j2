@@ -1,4 +1,4 @@
-# {{ ansible_managed }}
+{{ ansible_managed | comment }}
 
 {% if bareos_fd_directors is defined %}
 {% for director in bareos_fd_directors %}
