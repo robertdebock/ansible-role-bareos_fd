@@ -19,6 +19,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 
   roles:
     - role: robertdebock.bareos_fd
+      bareos_backup_configurations: yes
       bareos_fd_directors:
         - name: "bareos-dir"
           password: "secretpassword"
@@ -75,6 +76,7 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 # defaults file for bareos_fd
 
 # The client has these configuration parameters.
+bareos_fd_backup_configurations: no
 bareos_fd_hostname: "{{ inventory_hostname }}"
 bareos_fd_max_job_bandwidth: "10 mb/s"
 bareos_fd_message: "Standard"

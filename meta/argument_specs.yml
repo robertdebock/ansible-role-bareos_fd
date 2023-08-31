@@ -9,6 +9,10 @@ argument_specs:
       Install and configure BareOS File Daemon on your system.
     author: Robert de Bock
     options:
+      bareos_fd_backup_configurations:
+        type: "bool"
+        default: no
+        description: "Backup existing configurations."
       bareos_fd_hostname:
         type: "str"
         default: "{{ inventory_hostname }}"
