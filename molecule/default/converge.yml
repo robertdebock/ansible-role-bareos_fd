@@ -12,6 +12,8 @@
           monitor: no
           tls_enable: yes
           tls_verify_peer: no
+        - name: "disabled-director"
+          enabled: no
       bareos_fd_messages:
         - name: "Standard"
           director:
@@ -31,3 +33,5 @@
             - all
             - "!skipped"
             - "!saved"
+        - name: "disabled-message"
+          enabled: no

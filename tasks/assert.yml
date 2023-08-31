@@ -37,7 +37,7 @@
   when:
     - bareos_fd_directors is defined
 
-- name: assert | Test if items in bareos_fd_directors are set correctly
+- name: assert | Test if items in bareos_fd_directors are set correctly when enabled
   ansible.builtin.assert:
     that:
       - item.name is defined
@@ -54,6 +54,8 @@
     label: "{{ item.name }}"
   when:
     - bareos_fd_directors is defined
+    - item.enabled is not defined or
+      (item.enabled is defined and item.enabled)
 
 - name: assert | Test if item tls_enable in bareos_fd_directors are set correctly
   ansible.builtin.assert:
@@ -66,6 +68,8 @@
   when:
     - bareos_fd_directors is defined
     - item.tls_enable is defined
+    - item.enabled is not defined or
+      (item.enabled is defined and item.enabled)
 
 - name: assert | Test if item tls_verify_peer in bareos_fd_directors are set correctly
   ansible.builtin.assert:
@@ -78,6 +82,24 @@
   when:
     - bareos_fd_directors is defined
     - item.tls_verify_peer is defined
+    - item.enabled is not defined or
+      (item.enabled is defined and item.enabled)
+
+- name: assert | Test if items in bareos_fd_directors are set correctly when not enabled
+  ansible.builtin.assert:
+    that:
+      - item.name is defined
+      - item.name is string
+      - item.name is not none
+      - item.enabled is defined
+      - item.enabled is boolean
+    quiet: yes
+  loop: "{{ bareos_fd_directors }}"
+  loop_control:
+    label: "{{ item.name }}"
+  when:
+    - bareos_fd_directors is defined
+    - item.enabled is defined and not item.enabled
 
 - name: assert | Test if bareos_fd_messages is set correctly
   ansible.builtin.assert:
@@ -87,7 +109,7 @@
   when:
     - bareos_fd_messages is defined
 
-- name: assert | Test if items in bareos_fd_messages are set correctly
+- name: assert | Test if items in bareos_fd_messages are set correctly when enabled
   ansible.builtin.assert:
     that:
       - item.name is defined
@@ -102,6 +124,8 @@
     label: "{{ item.name }}"
   when:
     - bareos_fd_messages is defined
+    - item.enabled is not defined or
+      (item.enabled is defined and item.enabled)
 
 - name: assert | Test if item.director in bareos_fd_messages are set correctly
   ansible.builtin.assert:
@@ -119,6 +143,8 @@
   when:
     - bareos_fd_messages is defined
     - item.director is defined
+    - item.enabled is not defined or
+      (item.enabled is defined and item.enabled)
 
 - name: assert | Test if item.append in bareos_fd_messages are set correctly
   ansible.builtin.assert:
@@ -136,6 +162,8 @@
   when:
     - bareos_fd_messages is defined
     - item.append is defined
+    - item.enabled is not defined or
+      (item.enabled is defined and item.enabled)
 
 - name: assert | Test if item.console in bareos_fd_messages are set correctly
   ansible.builtin.assert:
@@ -148,3 +176,21 @@
   when:
     - bareos_fd_messages is defined
     - item.console is defined
+    - item.enabled is not defined or
+      (item.enabled is defined and item.enabled)
+
+- name: assert | Test if items in bareos_fd_messages are set correctly when not enabled
+  ansible.builtin.assert:
+    that:
+      - item.name is defined
+      - item.name is string
+      - item.name is not none
+      - item.enabled is defined
+      - item.enabled is boolean
+    quiet: yes
+  loop: "{{ bareos_fd_messages }}"
+  loop_control:
+    label: "{{ item.name }}"
+  when:
+    - bareos_fd_messages is defined
+    - item.enabled is defined and not item.enabled

@@ -20,15 +20,20 @@
   notify:
     - Restart bareos-filedaemon
 
-- name: Place bareos-dir.conf
+- name: Place director
   ansible.builtin.template:
-    src: bareos-dir.conf.j2
-    dest: "/etc/bareos/bareos-fd.d/director/bareos-dir.conf"
+    src: director.conf.j2
+    dest: "/etc/bareos/bareos-fd.d/director/{{ item.name }}"
     owner: bareos
     group: bareos
     mode: "0640"
+  loop: "{{ bareos_fd_directors }}"
+  loop_control:
+    label: "{{ item.name }}"
   notify:
     - Restart bareos-filedaemon
+  when:
+    - bareos_fd_directors is defined
 
 - name: Place message
   ansible.builtin.template:

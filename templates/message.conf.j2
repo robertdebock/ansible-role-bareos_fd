@@ -1,5 +1,6 @@
 {{ ansible_managed | comment }}
 
+{% if item.enabled is defined and item.enabled or item.enabled is not defined %}
 Messages {
   Name = "{{ item.name }}"
   Description = "{{ item.description }}"
@@ -13,3 +14,6 @@ Messages {
   Console = {{ item.console | join(', ') }}
 {% endif %}
 }
+{% else %}
+# This file is not enabled.
+{% endif %}

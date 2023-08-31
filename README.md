@@ -25,6 +25,8 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
           monitor: no
           tls_enable: yes
           tls_verify_peer: no
+        - name: "disabled-director"
+          enabled: no
       bareos_fd_messages:
         - name: "Standard"
           director:
@@ -44,6 +46,8 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
             - all
             - "!skipped"
             - "!saved"
+        - name: "disabled-message"
+          enabled: no
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/robertdebock/ansible-role-bareos_fd/blob/master/molecule/default/prepare.yml):
