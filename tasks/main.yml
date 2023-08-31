@@ -17,6 +17,7 @@
     owner: bareos
     group: bareos
     mode: "0640"
+    backup: "{{ bareos_backup_configurations }}"
   notify:
     - Restart bareos-filedaemon
 
@@ -27,6 +28,7 @@
     owner: bareos
     group: bareos
     mode: "0640"
+    backup: "{{ bareos_backup_configurations }}"
   loop: "{{ bareos_fd_directors }}"
   loop_control:
     label: "{{ item.name }}"
@@ -42,6 +44,7 @@
     owner: bareos
     group: bareos
     mode: "0640"
+    backup: "{{ bareos_backup_configurations }}"
   loop: "{{ bareos_fd_messages }}"
   loop_control:
     label: "{{ item.name }}"

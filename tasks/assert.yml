@@ -29,6 +29,13 @@
       - baeros_fd_heartbeat_interval is number
     quiet: yes
 
+- name: assert | Test if bareos_backup_configurations is set correctly
+  ansible.builtin.assert:
+    that:
+      - bareos_backup_configurations is defined
+      - bareos_backup_configurations is boolean
+    quiet: yes
+
 - name: assert | Test if bareos_fd_directors is set correctly
   ansible.builtin.assert:
     that:
