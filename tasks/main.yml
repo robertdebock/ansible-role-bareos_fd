@@ -19,6 +19,7 @@
     mode: "0640"
     backup: "{{ bareos_fd_backup_configurations }}"
   notify:
+    - Check configuration
     - Restart bareos-filedaemon
 
 - name: Place director
@@ -33,6 +34,7 @@
   loop_control:
     label: "{{ item.name }}"
   notify:
+    - Check configuration
     - Restart bareos-filedaemon
   when:
     - bareos_fd_directors is defined
@@ -49,6 +51,7 @@
   loop_control:
     label: "{{ item.name }}"
   notify:
+    - Check configuration
     - Restart bareos-filedaemon
   when:
     - bareos_fd_messages is defined
