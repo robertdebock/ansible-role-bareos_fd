@@ -25,7 +25,7 @@
 - name: Place director
   ansible.builtin.template:
     src: director.conf.j2
-    dest: "/etc/bareos/bareos-fd.d/director/{{ item.name }}"
+    dest: "/etc/bareos/bareos-fd.d/director/{{ item.name }}.conf"
     owner: bareos
     group: bareos
     mode: "0640"
