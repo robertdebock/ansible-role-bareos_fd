@@ -24,6 +24,8 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
         - name: "bareos-dir"
           password: "secretpassword"
           monitor: no
+          connection_from_client_to_director: yes
+          connection_from_director_to_client: no
           tls_enable: yes
           tls_verify_peer: no
         - name: "disabled-director"
