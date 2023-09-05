@@ -9,7 +9,7 @@
       ansible.builtin.wait_for:
         port: 9102
 
-    - name: Test configuration
+    - name: Test configuration for warnings
       ansible.builtin.command:
         cmd: bareos-fd --test-config
       become_user: bareos
