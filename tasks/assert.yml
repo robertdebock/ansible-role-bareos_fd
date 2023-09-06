@@ -45,11 +45,11 @@
       - bareos_fd_tls_verify_peer is boolean
     quiet: yes
 
-- name: assert | Test if baeros_fd_heartbeat_interval is set correctly
+- name: assert | Test if bareos_fd_heartbeat_interval is set correctly
   ansible.builtin.assert:
     that:
-      - baeros_fd_heartbeat_interval is defined
-      - baeros_fd_heartbeat_interval is number
+      - bareos_fd_heartbeat_interval is defined
+      - bareos_fd_heartbeat_interval is number
     quiet: yes
 
 - name: assert | Test if bareos_fd_directors is set correctly
