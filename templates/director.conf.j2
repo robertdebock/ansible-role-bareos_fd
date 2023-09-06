@@ -3,7 +3,7 @@
 {% if item.enabled is defined and item.enabled or item.enabled is not defined %}
 Director {
   Name = "{{ item.name }}"
-  Password = "[MD5]{{ item.password | md5 }}"
+  Password = "[md5]{{ item.password | md5 }}"
   Monitor = {{ item.monitor | ternary('Yes','No') }}
 {% if item.connection_from_client_to_director is defined %}
   Connection From Client To Director = {{ item.connection_from_client_to_director | ternary('Yes', 'No') }}
