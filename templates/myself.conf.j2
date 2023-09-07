@@ -2,9 +2,12 @@
 
 Client {
   Name = "{{ bareos_fd_hostname }}"
-  # TODO: TLS Enable is "yes" by default, add the default if not set.
   Messages = "{{ bareos_fd_message }}"
-  TLS Enable = {{ bareos_fd_tls_enable | ternary('Yes', 'No') }}
-  TLS Verify Peer = {{ bareos_fd_tls_verify_peer | ternary('Yes', 'No') }}
+{% if not bareos_fd_tls_enable %}
+  TLS Enable = No
+{% endif %}
+{% if not bareos_fd_tls_verify_peer %}
+  TLS Verify Peer = No
+{% endif %}
   Heartbeat Interval = {{ bareos_fd_heartbeat_interval }}
 }
