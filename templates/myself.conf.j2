@@ -6,8 +6,8 @@ Client {
 {% if not bareos_fd_tls_enable %}
   TLS Enable = No
 {% endif %}
-{% if not bareos_fd_tls_verify_peer %}
-  TLS Verify Peer = No
+{% if bareos_fd_tls_verify_peer %}
+  TLS Verify Peer = Yes
 {% endif %}
   Heartbeat Interval = {{ bareos_fd_heartbeat_interval }}
 }
