@@ -10,4 +10,7 @@ Client {
   TLS Verify Peer = Yes
 {% endif %}
   Heartbeat Interval = {{ bareos_fd_heartbeat_interval }}
+{% if bareos_fd_maximum_concurrent_jobs != 20 %}
+  Maximum Concurrent Jobs = {{ bareos_fd_max_concurrent_jobs }}
+{% endif %}
 }

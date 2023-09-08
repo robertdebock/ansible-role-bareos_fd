@@ -85,6 +85,7 @@ bareos_fd_message: "Standard"
 bareos_fd_tls_enable: yes
 bareos_fd_tls_verify_peer: no
 bareos_fd_heartbeat_interval: 0
+bareos_fd_maximum_concurrent_jobs: 20
 
 bareos_fd_directors: []
 bareos_fd_messages: []
