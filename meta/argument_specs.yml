@@ -49,3 +49,11 @@ argument_specs:
         type: "list"
         default: []
         description: "The Messages to configure."
+      bareos_fd_encryption_enabled:
+        type: "bool"
+        default: no
+        description: "For encryption of data, set this to `yes`."
+      bareos_fd_encryption_master_public_key:
+        type: "str"
+        default: ""
+        description: "The master public key to use."

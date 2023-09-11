@@ -32,3 +32,9 @@ bareos_fd_directors: []
 
 # The Messages to configure.
 bareos_fd_messages: []
+
+# For encryption of data, set this to `yes`.
+bareos_fd_encryption_enabled: no
+
+# The master public key to use.
+bareos_fd_encryption_master_public_key: ""

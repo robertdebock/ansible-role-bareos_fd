@@ -56,6 +56,11 @@
   when:
     - bareos_fd_messages is defined
 
+- name: Import encryption tasklist
+  ansible.builtin.import_tasks: encryption.yml
+  when:
+    - bareos_fd_encryption_enabled
+
 - name: Start bareos-filedaemon
   ansible.builtin.service:
     name: bareos-filedaemon
