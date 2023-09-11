@@ -85,7 +85,7 @@
     that:
       - bareos_fd_encryption_master_public_key is defined
       - bareos_fd_encryption_master_public_key is string
-      - bareos_fd_encryption_master_public_key is not none
+      - bareos_fd_encryption_master_public_key != ""
     quiet: yes
   when:
     - bareos_fd_encryption_enabled
