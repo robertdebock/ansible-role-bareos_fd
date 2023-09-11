@@ -78,16 +78,35 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 # defaults file for bareos_fd
 
 # The client has these configuration parameters.
+
+# Backup existing configurations.
 bareos_fd_backup_configurations: no
+
+# The hostname of the File Daemon.
 bareos_fd_hostname: "{{ inventory_hostname }}"
+
+# The maximum bandwidth to use.
 bareos_fd_max_job_bandwidth: "10 mb/s"
+
+# The message to use.
 bareos_fd_message: "Standard"
-bareos_fd_tls_enable: yes
-bareos_fd_tls_verify_peer: no
-bareos_fd_heartbeat_interval: 0
+
+# The maximum number of concurrent jobs.
 bareos_fd_maximum_concurrent_jobs: 20
 
+# Enable TLS.
+bareos_fd_tls_enable: yes
+
+# Verify the peer.
+bareos_fd_tls_verify_peer: no
+
+# The inteval in seconds to send a heartbeat.
+bareos_fd_heartbeat_interval: 0
+
+# The Directors to connect to.
 bareos_fd_directors: []
+
+# The Messages to configure.
 bareos_fd_messages: []
 ```
 
