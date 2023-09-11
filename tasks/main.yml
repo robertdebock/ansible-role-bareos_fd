@@ -63,6 +63,6 @@
 
 - name: Start bareos-filedaemon
   ansible.builtin.service:
-    name: bareos-filedaemon
+    name: "{{ bareos_fd_service }}"
     state: started
     enabled: yes
