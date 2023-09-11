@@ -36,8 +36,6 @@
   notify:
     - Check configuration
     - Restart bareos-filedaemon
-  when:
-    - bareos_fd_directors is defined
 
 - name: Place message
   ansible.builtin.template:
@@ -53,8 +51,6 @@
   notify:
     - Check configuration
     - Restart bareos-filedaemon
-  when:
-    - bareos_fd_messages is defined
 
 - name: Import encryption tasklist
   ansible.builtin.import_tasks: encryption.yml
