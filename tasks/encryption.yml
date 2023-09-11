@@ -1,6 +1,6 @@
 ---
 
-- name: encryption | Install python3-cryptography
+- name: encryption | Install python cryptography package
   ansible.builtin.package:
     name: "{{ bareos_fd_encryption_packages }}"
 
@@ -10,6 +10,8 @@
     owner: bareos
     group: bareos
     mode: "0600"
+    return_content: yes
+  register: bareos_fd_encryption_private_key
 
 - name: encryption | Generate csr for public key
   community.crypto.openssl_csr:
@@ -26,23 +28,15 @@
     privatekey_path: /etc/bareos/{{ bareos_fd_hostname }}-private.key
     csr_path: /etc/bareos/{{ bareos_fd_hostname }}-public.csr
     provider: selfsigned
+    return_content: yes
     owner: bareos
     group: bareos
     mode: "0644"
-
-- name: encryption | Read private key
-  ansible.builtin.slurp:
-    src: /etc/bareos/{{ bareos_fd_hostname }}-private.key
-  register: bareos_fd_encryption_private_key
-
-- name: encryption | Read public key
-  ansible.builtin.slurp:
-    src: /etc/bareos/{{ bareos_fd_hostname }}-public.key
   register: bareos_fd_encryption_public_key
 
 - name: encryption | Combine private and public key
   ansible.builtin.copy:
-    content: "{{ bareos_fd_encryption_private_key.content | b64decode }}{{ bareos_fd_encryption_public_key.content | b64decode }}"
+    content: "{{ bareos_fd_encryption_private_key.privatekey }}{{ bareos_fd_encryption_public_key.certificate }}"
     dest: /etc/bareos/{{ bareos_fd_hostname }}.pem
     owner: bareos
     group: bareos
