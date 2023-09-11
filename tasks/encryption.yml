@@ -1,16 +1,8 @@
 ---
 
-# - name: encryption | Install python pip
-#   ansible.builtin.package:
-#     name: python3-pip
-
-# - name: encryption | Install pip module cryptography
-#   ansible.builtin.pip:
-#     name: cryptography
-
 - name: encryption | Install python3-cryptography
   ansible.builtin.package:
-    name: python3-cryptography
+    name: "{{ bareos_fd_encryption_packages }}"
 
 - name: encryption | Generate private key
   community.crypto.openssl_privatekey:
