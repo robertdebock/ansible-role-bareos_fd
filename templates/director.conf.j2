@@ -2,9 +2,14 @@
 
 {% if item.enabled is defined and item.enabled or item.enabled is not defined %}
 Director {
-  Name = "{{ item.name }}"
+  Name = {{ item.name }}
+{% if item.description is defined %}
+  Description = "{{ item.description }}"
+{% endif %}
   Password = "[md5]{{ item.password | md5 }}"
-  Monitor = {{ item.monitor | ternary('Yes','No') }}
+{% if item.monitor is defined and item.monitor %}
+  Monitor = Yes
+{% endif %}
 {% if item.address is defined %}
   Address = "{{ item.address }}"
 {% endif %}
