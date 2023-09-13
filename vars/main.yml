@@ -15,3 +15,10 @@ _bareos_fd_service:
   default: "bareos-filedaemon"
   Archlinux: "bareos-fd"
 bareos_fd_service: "{{ _bareos_fd_service[ansible_os_family] | default(_bareos_fd_service['default']) }}"
+
+_bareos_fd_debug_packages:
+  default:
+    - "bareos-filedaemon-debuginfo"
+  Debian:
+    - "bareos-filedaemon-dbg"
+bareos_fd_debug_packages: "{{ _bareos_fd_debug_packages[ansible_os_family] | default(_bareos_fd_debug_packages['default']) }}"  

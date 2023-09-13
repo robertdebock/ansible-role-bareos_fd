@@ -13,6 +13,10 @@ argument_specs:
         type: "bool"
         default: no
         description: "Backup existing configurations."
+      bareos_fd_install_debug_packages:
+        type: "bool"
+        default: no
+        description: "Install debug packages. This requires the debug repositories to be enabled."
       bareos_fd_hostname:
         type: "str"
         default: "{{ inventory_hostname }}"

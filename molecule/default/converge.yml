@@ -7,6 +7,7 @@
   roles:
     - role: ansible-role-bareos_fd
       bareos_fd_backup_configurations: yes
+      bareos_fd_install_debug_packages: yes
       bareos_fd_encryption_enabled: yes
       bareos_fd_encryption_master_public_key: |
         -----BEGIN CERTIFICATE-----

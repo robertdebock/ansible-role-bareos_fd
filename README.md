@@ -20,6 +20,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
   roles:
     - role: robertdebock.bareos_fd
       bareos_fd_backup_configurations: yes
+      bareos_fd_install_debug_packages: yes
       bareos_fd_encryption_enabled: yes
       bareos_fd_encryption_master_public_key: |
         -----BEGIN CERTIFICATE-----
@@ -90,6 +91,7 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
   roles:
     - role: robertdebock.bootstrap
     - role: robertdebock.bareos_repository
+      bareos_repository_enable_tracebacks: yes
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
@@ -106,6 +108,9 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 
 # Backup existing configurations.
 bareos_fd_backup_configurations: no
+
+# Install debug packages. This requires the debug repositories to be enabled.
+bareos_fd_install_debug_packages: no
 
 # The hostname of the File Daemon.
 bareos_fd_hostname: "{{ inventory_hostname }}"

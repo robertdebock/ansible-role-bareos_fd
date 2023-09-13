@@ -10,6 +10,12 @@
   ansible.builtin.package:
     name: bareos-filedaemon
 
+- name: Install debug packages
+  ansible.builtin.package:
+    name: "{{ bareos_fd_debug_packages }}"
+  when:
+    - bareos_fd_install_debug_packages
+
 - name: Place myself.conf
   ansible.builtin.template:
     src: myself.conf.j2

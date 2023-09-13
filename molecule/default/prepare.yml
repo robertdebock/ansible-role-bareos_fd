@@ -7,3 +7,4 @@
   roles:
     - role: robertdebock.bootstrap
     - role: robertdebock.bareos_repository
+      bareos_repository_enable_tracebacks: yes
