@@ -21,4 +21,4 @@ _bareos_fd_debug_packages:
     - "bareos-filedaemon-debuginfo"
   Debian:
     - "bareos-filedaemon-dbg"
-bareos_fd_debug_packages: "{{ _bareos_fd_debug_packages[ansible_os_family] | default(_bareos_fd_debug_packages['default']) }}"  
+bareos_fd_debug_packages: "{{ _bareos_fd_debug_packages[ansible_os_family] | default(_bareos_fd_debug_packages['default']) }}"
