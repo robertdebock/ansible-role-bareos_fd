@@ -25,4 +25,4 @@ _bareos_fd_debug_packages:
   RedHat:
     "7":
       - "bareos-debuginfo"
-bareos_fd_debug_packages: "{{ _bareos_fd_debug_packages[ansible_os_family][ansible_distribution_major_version] | default(_bareos_fd_debug_packages[ansible_os_family] | default(_bareos_fd_debug_packages['default'])) }}"
+bareos_fd_debug_packages: "{{ _bareos_fd_debug_packages[ansible_os_family][ansible_distribution_major_version] | default(_bareos_fd_debug_packages[ansible_os_family]) | default(_bareos_fd_debug_packages['default']) }}"
