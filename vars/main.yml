@@ -20,8 +20,11 @@ bareos_fd_service: "{{ _bareos_fd_service[ansible_os_family] | default(_bareos_f
 _bareos_fd_debug_packages:
   default:
     - "bareos-filedaemon-debuginfo"
+    - gdb
   Debian:
     - "bareos-dbg"
+    - gdb
   RedHat-7:
     - "bareos-debuginfo"
+    - gdb
 bareos_fd_debug_packages: "{{ _bareos_fd_debug_packages[ansible_os_family ~ '-' ~ ansible_distribution_major_version] | default(_bareos_fd_debug_packages[ansible_os_family]) | default(_bareos_fd_debug_packages['default']) }}"
