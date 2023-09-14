@@ -57,6 +57,10 @@ argument_specs:
         type: "bool"
         default: no
         description: "For encryption of data, set this to `yes`."
+      bareos_fd_encryption_private_key:
+        type: "str"
+        default: ""
+        description: "You may bring your own private key. If not specified, a new one will be generated."
       bareos_fd_encryption_master_public_key:
         type: "str"
         default: ""
