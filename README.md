@@ -1,6 +1,6 @@
 # [bareos_fd](#bareos_fd)
 
-Install and configure [BareOS](https://www.bareos.com/) File Daemon.
+Install and configure [Bareos](https://www.bareos.com/) File Daemon.
 
 |GitHub|GitLab|Quality|Downloads|Version|
 |------|------|-------|---------|-------|
