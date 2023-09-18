@@ -60,7 +60,8 @@
     - Restart bareos-filedaemon
 
 - name: Import encryption tasklist
-  ansible.builtin.import_tasks: encryption.yml
+  ansible.builtin.import_tasks:
+    file: encryption.yml
   when:
     - bareos_fd_encryption_enabled
 
