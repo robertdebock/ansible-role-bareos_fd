@@ -10,7 +10,7 @@ _bareos_fd_encryption_packages:
   RedHat:
     "7":
       - python2-cryptography
-bareos_fd_encryption_packages: "{{ _bareos_fd_encryption_packages[ansible_os_family][ansible_distribution_major_version] | default(_bareos_fd_encryption_packages[ansible_os_family]) | default(_bareos_fd_encryption_packages['default']) }}"
+bareos_fd_encryption_packages: "{{ _bareos_fd_encryption_packages[ansible_os_family][ansible_distribution_major_version] | default(_bareos_fd_encryption_packages[ansible_os_family] | default(_bareos_fd_encryption_packages['default'])) }}"
 
 # A map to define the service name to manage.
 _bareos_fd_service:
