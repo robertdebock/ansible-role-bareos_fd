@@ -1,4 +1,4 @@
-# [bareos_fd](#bareos_fd)
+# Ansible role [bareos_fd](#bareos_fd)
 
 Install and configure [Bareos](https://www.bareos.com/) File Daemon.
 
@@ -243,11 +243,11 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 
 |container|tags|
 |---------|----|
-|[Debian](https://hub.docker.com/repository/docker/robertdebock/debian/general)|bookworm, bullseye, buster|
-|[EL](https://hub.docker.com/repository/docker/robertdebock/enterpriselinux/general)|7, 8, 9|
-|[Fedora](https://hub.docker.com/repository/docker/robertdebock/fedora/general)|37, 38|
-|[opensuse](https://hub.docker.com/repository/docker/robertdebock/opensuse/general)|all|
-|[Ubuntu](https://hub.docker.com/repository/docker/robertdebock/ubuntu/general)|jammy, focal|
+|[Debian](https://hub.docker.com/r/robertdebock/debian)|bookworm, bullseye, buster|
+|[EL](https://hub.docker.com/r/robertdebock/enterpriselinux)|7, 8, 9|
+|[Fedora](https://hub.docker.com/r/robertdebock/fedora/)|37, 38|
+|[opensuse](https://hub.docker.com/r/robertdebock/opensuse)|all|
+|[Ubuntu](https://hub.docker.com/r/robertdebock/ubuntu)|jammy, focal|
 
 The minimum version of Ansible required is 2.12, tests have been done to:
 
