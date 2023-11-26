@@ -1,4 +1,4 @@
-# Ansible role [bareos_fd](#bareos_fd)
+# [Ansible role bareos_fd](#bareos_fd)
 
 Install and configure [Bareos](https://www.bareos.com/) File Daemon.
 
