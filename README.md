@@ -4,7 +4,7 @@ Install and configure [Bareos](https://www.bareos.com/) File Daemon.
 
 |GitHub|GitLab|Downloads|Version|
 |------|------|---------|-------|
-|[![github](https://github.com/robertdebock/ansible-role-bareos_fd/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-bareos_fd/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-bareos_fd/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-bareos_fd)|[![downloads](https://img.shields.io/ansible/role/d/32424)](https://galaxy.ansible.com/robertdebock/bareos_fd)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-bareos_fd.svg)](https://github.com/robertdebock/ansible-role-bareos_fd/releases/)|
+|[![github](https://github.com/robertdebock/ansible-role-bareos_fd/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-bareos_fd/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-bareos_fd/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-bareos_fd)|[![downloads](https://img.shields.io/ansible/role/d/robertdebock/bareos_fd)](https://galaxy.ansible.com/robertdebock/bareos_fd)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-bareos_fd.svg)](https://github.com/robertdebock/ansible-role-bareos_fd/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
