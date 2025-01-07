@@ -39,9 +39,7 @@ jobs:
           - image: "enterpriselinux"
             tag: "latest"
           - image: "fedora"
-            tag: "38"
-          - image: "fedora"
-            tag: "39"
+            tag: "40"
           - image: "ubuntu"
             tag: "jammy"
     steps:
@@ -75,9 +73,7 @@ jobs:
           - image: "enterpriselinux"
             tag: "latest"
           - image: "fedora"
-            tag: "38"
-          - image: "fedora"
-            tag: "39"
+            tag: "40"
           - image: "ubuntu"
             tag: "jammy"
     steps:
@@ -111,9 +107,7 @@ jobs:
           - image: "enterpriselinux"
             tag: "latest"
           - image: "fedora"
-            tag: "38"
-          - image: "fedora"
-            tag: "39"
+            tag: "40"
           - image: "ubuntu"
             tag: "jammy"
     steps:
