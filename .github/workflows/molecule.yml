@@ -9,7 +9,6 @@ on:
   push:
     branches:
       - master
-  pull_request:
   schedule:
     - cron: '3 2 2 * *'
 
@@ -36,8 +35,6 @@ jobs:
             tag: "bullseye"
           - image: "enterpriselinux"
             tag: "latest"
-          - image: "fedora"
-            tag: "40"
           - image: "ubuntu"
             tag: "jammy"
     steps:
