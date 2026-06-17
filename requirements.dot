@@ -1,0 +1,11 @@
+digraph PhiloDilemma {
+  label = "Robert de Bock" ;
+  overlap=false
+  {
+    "bareos_fd" [fillcolor=yellow style=filled penwidth=3]
+    "robertdebock.bootstrap" [fillcolor=green style=filled]
+    "robertdebock.bareos_repository" [fillcolor=green style=filled]
+  }
+  "bareos_fd" -> "robertdebock.bootstrap"
+  "bareos_fd" -> "robertdebock.bareos_repository"
+}
