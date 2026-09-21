@@ -20,9 +20,9 @@ molecule:
   parallel:
     matrix:
       - image: "debian"
-        tag: "bookworm"
+        tag: "latest"
       - image: "debian"
-        tag: "bullseye"
+        tag: "bookworm"
       - image: "enterpriselinux"
         tag: "latest"
       - image: "ubuntu"
